@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="34" viewBox="0 0 240 34">
+  <style>
+    .twinkle-a,.twinkle-b,.twinkle-c{transform-box:fill-box;transform-origin:center;will-change:opacity,transform}
+    .twinkle-a{animation:twinkle-a 6.4s ease-in-out infinite}
+    .twinkle-b{animation:twinkle-b 8.1s ease-in-out -3.2s infinite}
+    .twinkle-c{animation:twinkle-c 7.3s ease-in-out -5.1s infinite}
+    @keyframes twinkle-a{0%,67%,74%,100%{opacity:1;transform:scale(1)}70%{opacity:.45;transform:scale(.82)}72%{opacity:1;transform:scale(1.65)}}
+    @keyframes twinkle-b{0%,76%,84%,100%{opacity:1;transform:scale(1)}79%{opacity:.5;transform:scale(.86)}81%{opacity:1;transform:scale(1.55)}}
+    @keyframes twinkle-c{0%,58%,67%,100%{opacity:1;transform:scale(1)}61%{opacity:.42;transform:scale(.8)}64%{opacity:1;transform:scale(1.7)}}
+    @media (prefers-reduced-motion:reduce){.twinkle-a,.twinkle-b,.twinkle-c{animation:none}}
+  </style>
+  <defs>
+    <filter id="goldGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="redGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="1.7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path d="M0 5C30 5 30 23 60 23S90 5 120 5s30 18 60 18 30-18 60-18" fill="none" stroke="#356f58" stroke-width="2" stroke-linecap="round"/>
+  <path d="M0 4.2C30 4.2 30 22.2 60 22.2S90 4.2 120 4.2s30 18 60 18 30-18 60-18" fill="none" stroke="#77a17c" stroke-opacity=".32" stroke-width=".8"/>
+  <g stroke="#856f3e" stroke-width="1" stroke-linecap="round">
+    <path d="M18 7.1v4.2"/><path d="M42 18.3v4.1"/><path d="M60 23v4.2"/><path d="M82 16.2v4.2"/>
+    <path d="M108 6.3v4.2"/><path d="M132 7.2v4.2"/><path d="M158 18.2v4.2"/><path d="M180 23v4.2"/>
+    <path d="M202 16.2v4.2"/><path d="M226 6.4v4.2"/>
+  </g>
+  <g fill="#f2d27c" filter="url(#goldGlow)">
+    <circle class="twinkle-a" cx="18" cy="13" r="2.25"/><circle cx="60" cy="29" r="2.25"/><circle class="twinkle-b" cx="108" cy="12.2" r="2.25"/>
+    <circle cx="158" cy="24.1" r="2.25"/><circle class="twinkle-c" cx="202" cy="22.1" r="2.25"/>
+  </g>
+  <g fill="#dc725f" filter="url(#redGlow)">
+    <circle cx="42" cy="24.1" r="2.25"/><circle class="twinkle-c" cx="82" cy="22" r="2.25"/><circle cx="132" cy="13" r="2.25"/>
+    <circle class="twinkle-a" cx="180" cy="29" r="2.25"/><circle cx="226" cy="12.2" r="2.25"/>
+  </g>
+  <g fill="#9ab79f" opacity=".42">
+    <path d="m28 10-7-4 6 6-8-1 9 3Z"/><path d="m92 10 7-4-6 6 8-1-9 3Z"/>
+    <path d="m148 12-7-4 6 6-8-1 9 3Z"/><path d="m212 10 7-4-6 6 8-1-9 3Z"/>
+  </g>
+</svg>

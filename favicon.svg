@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#245b4d"/>
+      <stop offset="1" stop-color="#081d19"/>
+    </linearGradient>
+    <linearGradient id="tree" x1="32" y1="17" x2="32" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7db99b"/>
+      <stop offset="1" stop-color="#21664f"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#bg)"/>
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="16.25" fill="none" stroke="#e8d18f" stroke-opacity=".42" stroke-width="1.5"/>
+  <path d="m32 9 1.65 3.35 3.7.54-2.68 2.61.63 3.69L32 17.45l-3.3 1.74.63-3.69-2.68-2.61 3.7-.54L32 9Z" fill="#f0d789" filter="url(#glow)"/>
+  <path d="m32 16-9 13h5l-10 14h8l-7 10h26l-7-10h8L36 29h5L32 16Z" fill="url(#tree)" stroke="#b8dac8" stroke-opacity=".32"/>
+  <circle cx="27" cy="31" r="2" fill="#e27b65"/>
+  <circle cx="36" cy="37" r="2" fill="#e8cf83"/>
+  <circle cx="28" cy="44" r="2" fill="#e27b65"/>
+  <circle cx="38" cy="47" r="1.75" fill="#e8cf83"/>
+  <rect x="29" y="52" width="6" height="5" rx="1" fill="#9c623f"/>
+</svg>
