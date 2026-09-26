@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#091a19" />
+  <meta name="description" content="The private 2026 Vining Family Christmas list and gift exchange." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta property="og:title" content="Vining Family Christmas List" />
+  <meta property="og:description" content="One family, six wish lists, and no duplicate gifts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://christmas.tjvining.com/" />
+  <title>Vining Family Christmas</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://christmas.tjvining.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="overrides.css" />
+</head>
+<body>
+  <div class="aurora aurora-one"></div>
+  <div class="aurora aurora-two"></div>
+  <div class="festive-atmosphere" aria-hidden="true">
+    <div class="snowfall snowfall-back">
+      <i>❄</i><i>✦</i><i>❄</i><i>·</i><i>❄</i><i>✦</i><i>·</i><i>❄</i><i>·</i><i>✦</i><i>❄</i><i>·</i>
+    </div>
+    <div class="snowfall snowfall-front">
+      <i>✦</i><i>❄</i><i>·</i><i>❄</i><i>✦</i><i>·</i><i>❄</i><i>·</i><i>✦</i><i>❄</i>
+    </div>
+    <span class="festive-sparkle sparkle-one">✦</span>
+    <span class="festive-sparkle sparkle-two">✦</span>
+    <span class="festive-sparkle sparkle-three">✦</span>
+  </div>
+
+  <main id="app">
+    <section id="login-view" class="login-shell">
+      <div class="login-card glass-panel">
+      <button id="cancel-user-switch" class="switch-user-close hidden" type="button" aria-label="Cancel changing user">×</button>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">☼</button>
+      <div class="brand-mark">✦</div>
+        <p class="eyebrow">VINING FAMILY · 2026</p>
+        <h1 class="login-title"><span>Your Christmas list</span><br><em>organized.</em></h1>
+        <p class="lede">Your family’s private gift exchange, with fewer duplicates and more surprises.</p>
+        <form id="login-form">
+          <label>Who are you?</label>
+          <div id="person-choices" class="person-choices" role="group" aria-label="Choose your name"><button type="button" class="person-choice selected" data-person-choice="TJ"><span>T</span>TJ</button><button type="button" class="person-choice" data-person-choice="Emma"><span>E</span>Emma</button><button type="button" class="person-choice" data-person-choice="Macon"><span>M</span>Macon</button><button type="button" class="person-choice" data-person-choice="Bill"><span>B</span>Bill</button><button type="button" class="person-choice" data-person-choice="Chloe"><span>C</span>Chloe</button><button type="button" class="person-choice" data-person-choice="Tonya"><span>T</span>Tonya</button></div>
+          <label for="password-input">Family password</label>
+          <div class="password-wrap"><input id="password-input" type="password" placeholder="Enter the shared password" required /><button type="button" id="toggle-password" aria-label="Show password">◉</button></div>
+          <button class="primary-button full-width" type="submit">Enter the exchange <span>→</span></button>
+          <p id="login-error" class="error-message" role="alert"></p>
+        </form>
+        <p class="login-footnote">Your identity is remembered on this device.<br />Your own purchase details stay hidden to preserve the surprise.</p>
+      </div>
+      <div class="login-side-note"><span>06</span><p>one very good Christmas</p></div>
+    </section>
+
+    <section id="app-view" class="app-shell hidden">
+      <header class="topbar">
+        <button id="home-button" class="wordmark" type="button" aria-label="Return to all family lists"><span class="mini-mark">✦</span><span>Vining Family <i>Christmas List</i></span></button>
+        <div class="topbar-actions"><button id="feature-button" class="feature-button">+ Suggest a feature</button><button id="change-user" class="signed-in" aria-label="Change user">Signed in as <strong id="current-user-name"></strong></button><button class="theme-toggle" type="button" aria-label="Switch theme">☼</button></div>
+      </header>
+      <div class="page-wrap">
+        <section class="hero-row instruction-hero">
+          <div><h2>The Vining Family<br /><em>Christmas list.</em></h2></div>
+          <div class="instruction-panel"><p class="eyebrow">HOW TO USE THIS SITE</p><div class="hero-message instruction-copy"><p><strong>1</strong><span>Add gifts to your own list with a link, cost, priority, and any helpful notes.</span></p><p><strong>2</strong><span>Before buying an item, check that person’s list so no one makes a duplicate purchase.</span></p><p><strong>3</strong><span>Your own list’s purchase details stay hidden from you — keep the surprise alive.</span></p><p><strong>✦</strong><span>If you can, add 4–6 ideas under $25 for stocking stuffers.</span></p></div></div>
+        </section>
+        <section id="christmas-countdown" class="christmas-countdown" aria-live="polite"></section>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-button active" data-view="lists"><span>☷</span> All wish lists</button>
+          <button class="nav-button" data-view="my-list"><span>♡</span> My list</button>
+          <button class="nav-button" data-view="giving"><span>◇</span> My giving</button>
+        </nav>
+        <div id="content"></div>
+      </div>
+      <footer><span>Vining Family Christmas 2026</span></footer>
+      <div id="presence-widget" class="presence-widget hidden" title="Who has this page open right now"></div>
+      <button id="chat-launcher" class="chat-launcher" type="button" aria-label="Open family chat" title="Family chat"><svg class="chat-launcher-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M7.25 8.25h17.5a3 3 0 0 1 3 3v9.25a3 3 0 0 1-3 3H15l-6.3 4v-4H7.25a3 3 0 0 1-3-3v-9.25a3 3 0 0 1 3-3Z"/><circle cx="10.5" cy="16" r="1.35"/><circle cx="16" cy="16" r="1.35"/><circle cx="21.5" cy="16" r="1.35"/></svg><span class="chat-holly" aria-hidden="true">✦</span><span id="chat-badge" class="chat-badge hidden"></span></button>
+      <aside id="chat-panel" class="chat-panel hidden" aria-label="Family chat">
+        <div class="chat-resize-handle" id="chat-resize-handle" title="Drag to resize"></div>
+        <header class="chat-header"><div><span class="chat-presence">●</span><strong>Family chat</strong><small>Everyone can see these messages</small></div><div class="chat-controls"><button id="chat-expand" type="button" aria-label="Expand chat">↗</button><button id="chat-close" type="button" aria-label="Close chat">×</button></div></header>
+        <div id="chat-messages" class="chat-messages"></div>
+        <form id="chat-form" class="chat-form"><input id="chat-input" required autocomplete="off" placeholder="Message the family…" /><button type="submit" aria-label="Send message">↑</button></form>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="item-dialog" class="item-dialog">
+    <form method="dialog" id="item-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow" id="item-dialog-eyebrow">ADD TO YOUR LIST</p><h3 id="item-dialog-title">A thoughtful little want</h3>
+      <label for="gift-input">Gift name <span>*</span></label><input id="gift-input" required placeholder="What would make you smile?" />
+      <div class="form-grid"><div><label for="cost-input">Cost</label><input id="cost-input" inputmode="decimal" placeholder="$0.00" /></div><div><label for="priority-input">Priority</label><select id="priority-input"><option value="5">★★★★★  Must have</option><option value="4">★★★★☆  Really want</option><option value="3" selected>★★★☆☆  Would love</option><option value="2">★★☆☆☆  Nice to have</option><option value="1">★☆☆☆☆  Just a thought</option></select></div></div>
+      <label for="link-input">Shopping link</label><input id="link-input" type="url" placeholder="https://…" />
+      <label for="notes-input">Notes</label><textarea id="notes-input" rows="3" placeholder="Size, color, helpful details…"></textarea>
+      <button class="primary-button full-width" id="item-submit-button" value="default">Add to my list <span>→</span></button>
+    </form>
+  </dialog>
+
+  <dialog id="purchase-dialog" class="item-dialog">
+    <form method="dialog" id="purchase-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">MARK AS PURCHASED</p><h3>Keep this one secret.</h3><p class="dialog-subtitle" id="purchase-gift-name"></p>
+      <label>Purchased by</label><div id="buyer-choices" class="buyer-choices" role="group" aria-label="Select one or more purchasers"></div><p class="buyer-help">Select multiple people for a joint gift. The listed cost will be split evenly in each person’s My Giving summary.</p><p id="buyer-error" class="field-error"></p>
+      <label for="claim-status-input">Gift progress</label><select id="claim-status-input"><option value="claimed">Claimed</option><option value="ordered" selected>Ordered</option><option value="shipped">Shipped</option><option value="delivered">Delivered</option><option value="wrapped">Wrapped</option></select>
+      <div class="form-grid"><div><label for="order-date-input">Order date, if applicable</label><input id="order-date-input" type="date" /></div><div><label for="arrival-input">Arrival location</label><input id="arrival-input" placeholder="e.g. Home, office" /></div></div>
+      <button class="primary-button full-width" value="default">Save purchase <span>→</span></button>
+    </form>
+  </dialog>
+  <dialog id="progress-dialog" class="item-dialog small-dialog">
+    <form method="dialog" id="progress-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">GIFT PROGRESS</p><h3>Update this gift</h3>
+      <p class="dialog-subtitle" id="progress-gift-name"></p>
+      <label for="progress-status-input">Current status</label><select id="progress-status-input"><option value="claimed">Claimed</option><option value="ordered">Ordered</option><option value="shipped">Shipped</option><option value="delivered">Delivered</option><option value="wrapped">Wrapped</option></select>
+      <button class="primary-button full-width" value="default">Save progress <span>→</span></button>
+    </form>
+  </dialog>
+  <dialog id="unclaim-dialog" class="item-dialog small-dialog">
+    <form method="dialog" id="unclaim-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">UPDATE YOUR CLAIM</p><h3>Unclaim this gift?</h3>
+      <p class="dialog-subtitle">It will become available for someone else to purchase.</p>
+      <div class="dialog-actions"><button class="secondary-button" type="button" id="cancel-unclaim">Keep claimed</button><button class="primary-button" value="default">Unclaim gift</button></div>
+    </form>
+  </dialog>
+  <dialog id="delete-dialog" class="item-dialog small-dialog">
+    <form method="dialog" id="delete-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">REMOVE FROM YOUR LIST</p><h3>Delete this gift?</h3>
+      <p class="dialog-subtitle" id="delete-gift-name"></p>
+      <div class="dialog-actions"><button class="secondary-button" type="button" id="cancel-delete">Keep gift</button><button class="danger-button" value="default">Delete gift</button></div>
+    </form>
+  </dialog>
+  <dialog id="comment-delete-dialog" class="item-dialog small-dialog">
+    <form method="dialog" id="comment-delete-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">REMOVE COMMENT</p><h3>Delete your comment?</h3>
+      <p class="dialog-subtitle">This note will be permanently removed from the family discussion.</p>
+      <div class="dialog-actions"><button class="secondary-button" type="button" id="cancel-comment-delete">Keep comment</button><button class="danger-button" value="default">Delete comment</button></div>
+    </form>
+  </dialog>
+  <dialog id="feature-delete-dialog" class="item-dialog small-dialog">
+    <form method="dialog" id="feature-delete-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">REMOVE FEATURE REQUEST</p><h3>Delete your idea?</h3>
+      <p class="dialog-subtitle">This request and all of its votes will be permanently removed.</p>
+      <div class="dialog-actions"><button class="secondary-button" type="button" id="cancel-feature-delete">Keep idea</button><button class="danger-button" value="default">Delete idea</button></div>
+    </form>
+  </dialog>
+  <dialog id="feature-dialog" class="item-dialog feature-dialog">
+    <form method="dialog" id="feature-form">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">MAKE IT BETTER</p><h3 id="feature-dialog-title">Suggest a feature</h3>
+      <p class="dialog-subtitle">Have an idea for the family list? Drop it here and let everyone vote.</p>
+      <label for="feature-input">Your idea</label><textarea id="feature-input" rows="3" required placeholder="What would make this easier or more fun?"></textarea>
+      <button class="primary-button full-width" id="feature-submit-button" value="default">Submit idea <span>→</span></button>
+      <div class="feature-request-list" id="feature-request-list"></div>
+    </form>
+  </dialog>
+  <dialog id="giving-intro-dialog" class="item-dialog giving-intro-dialog">
+    <form method="dialog">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">MY GIVING</p>
+      <h3>Your gifting, at a glance.</h3>
+      <p class="dialog-subtitle">This private overview helps you keep Christmas spending thoughtful and balanced.</p>
+      <div class="intro-points">
+        <div><span>1</span><p><strong>Claim gifts from other people’s lists.</strong>Your claimed items automatically appear here under each recipient.</p></div>
+        <div><span>2</span><p><strong>Compare your estimated spending.</strong>Totals use the prices listed on each gift, while the average helps you spot big differences.</p></div>
+        <div><span>✦</span><p><strong>Buying something together?</strong>A joint gift’s listed cost is divided evenly among everyone selected as a purchaser.</p></div>
+      </div>
+      <p class="intro-privacy">Your own wish-list claims remain hidden here, too. No Christmas surprises are revealed.</p>
+      <button class="primary-button full-width" value="default">Got it — show my giving <span>→</span></button>
+    </form>
+  </dialog>
+  <dialog id="my-list-intro-dialog" class="item-dialog intro-dialog">
+    <form method="dialog">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <p class="eyebrow">MY LIST</p>
+      <h3>Make your list unmistakably yours.</h3>
+      <p class="dialog-subtitle">Give the family enough detail to find the right gift without spoiling any surprises.</p>
+      <div class="intro-points">
+        <div><span>1</span><p><strong>Add the useful details.</strong>Include a shopping link, estimated cost, priority, and notes such as size, color, or preferred style.</p></div>
+        <div><span>2</span><p><strong>Let priority organize everything.</strong>Your most-wanted gifts automatically rise to the top, and linked items receive an image preview when available.</p></div>
+        <div><span>✦</span><p><strong>Keep it current.</strong>Edit or delete anything at any time—including the example item once you are comfortable adding your own ideas.</p></div>
+      </div>
+      <p class="intro-privacy">The family can claim and discuss your gifts, but you will not see those details on your own list. The surprise stays intact.</p>
+      <button class="primary-button full-width" value="default">Got it — show my list <span>→</span></button>
+    </form>
+  </dialog>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
